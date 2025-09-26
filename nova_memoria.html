@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nova Memória</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-gray-50 min-h-screen flex flex-col">
+    <header class="bg-blue-700 text-white p-6 flex justify-between items-center shadow-md">
+        <h1 class="text-2xl font-bold">➕ Nova Memória</h1>
+        <nav class="flex gap-4">
+            <a href="index.html" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition">🏠
+                Home</a>
+            <a href="memorias.html" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">📖
+                Ver Memórias</a>
+        </nav>
+    </header>
+
+    <main class="flex-1 flex items-center justify-center p-6">
+        <aside class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-lg">
+            <h2 class="text-xl font-bold mb-6 text-blue-700">Adicionar uma Nova Memória</h2>
+            <form id="form-memoria" class="space-y-4">
+                <input type="text" id="titulo" placeholder="Título do Local" required
+                    class="w-full border rounded-lg p-3" />
+                <input type="date" id="data" required class="w-full border rounded-lg p-3" />
+                <input type="url" id="foto" placeholder="https://exemplo.com/foto.jpg"
+                    class="w-full border rounded-lg p-3" />
+                <textarea id="descricao" minlength="15" required placeholder="Descrição da viagem..."
+                    class="w-full border rounded-lg p-3"></textarea>
+
+                <div class="mt-6">
+                    <label class="block mb-8 text-lg font-semibold text-gray-700">Avaliação</label>
+
+                    <div class="relative w-full">
+                        <input type="range" id="avaliacao" min="1" max="5" step="1" value="3"
+                            class="w-full h-2 bg-gray-300 rounded-lg accent-yellow-400 cursor-pointer z-10 relative" />
+
+                        <div id="estrelas"
+                            class="absolute top-[-1.5rem] left-0 w-full flex justify-between text-yellow-400 text-2xl select-none pointer-events-none">
+                            <span data-value="1">☆</span>
+                            <span data-value="2">☆</span>
+                            <span data-value="3">☆</span>
+                            <span data-value="4">☆</span>
+                            <span data-value="5">☆</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <input type="hidden" id="latitude" />
+                <input type="hidden" id="longitude" />
+
+                <button type="button" id="btn-localizacao"
+                    class="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition">
+                    📍 Adicionar Localização
+                </button>
+                <button type="submit"
+                    class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition">
+                    💾 Salvar Memória
+                </button>
+            </form>
+        </aside>
+    </main>
+
+    <footer class="bg-blue-700 text-white text-center py-4 mt-auto">
+        Desenvolvido por Vinicius Valero – 2025
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

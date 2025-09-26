@@ -1,0 +1,25 @@
+.carousel-slide {
+  flex-shrink: 0;
+  width: 40%;       /* largura base das imagens */
+  margin: 0 1%;     /* espaçamento entre slides */
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  opacity: 0.5;     /* padrão: imagens laterais semi-transparentes */
+  transform: scale(0.8); /* padrão: menores */
+  transition: transform 0.7s ease, opacity 0.7s ease;
+}
+
+/* centraliza o slide ativo */
+.carousel-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#estrelas span {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+#estrelas span.active {
+  transform: scale(1.5);
+  color: #facc15; /* amarelo vivo */
+}
